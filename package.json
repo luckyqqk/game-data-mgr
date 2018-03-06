@@ -1,0 +1,25 @@
+{
+  "name": "game-data-mgr",
+  "version": "0.0.0",
+  "description": "game data mgr from mysql, first search by redis. base nodeJS and out of any framework.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luckyqqk/game-data-mgr.git"
+  },
+  "keywords": [
+    "game",
+    "data",
+    "mysql",
+    "redis"
+  ],
+  "author": "luckyqqk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luckyqqk/game-data-mgr/issues"
+  },
+  "homepage": "https://github.com/luckyqqk/game-data-mgr#readme"
+}
