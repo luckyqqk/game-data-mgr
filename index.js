@@ -82,7 +82,7 @@ DataMgr.prototype.insertData = function (tableName, jsonArray, noCache, cb) {
     var self = this;
     self.structureRedis.getStructure(self.databaseSign, tableName, (err, structure)=> {
         if (!!err || !structure) {
-            cb(err || 'can not find structure');
+            cb(err || `${tableName} can not find structure`);
             return;
         }
         var makeArr = SQLMaker.makeInsertSql(structure, jsonArray);
@@ -131,7 +131,7 @@ DataMgr.prototype.deleteData = function (tableName, priValue, forValue, noCache,
     var self = this;
     self.structureRedis.getStructure(self.databaseSign, tableName, (err, structure)=> {
         if (!!err || !structure) {
-            cb(err || 'can not find structure');
+            cb(err || `${tableName} can not find structure`);
             return;
         }
         var condition = !!priValue ? format('`%s` = ', structure[PRIMARY], priValue) : format('`%s` = ', structure[FOREIGN], forValue);
@@ -162,7 +162,7 @@ DataMgr.prototype.updateData = function (tableName, jsonValue, noCache, cb) {
     var self = this;
     self.structureRedis.getStructure(self.databaseSign, tableName, (err, structure)=> {
         if (!!err || !structure) {
-            cb(err || 'can not find structure');
+            cb(err || `${tableName} can not find structure`);
             return;
         }
         var makeArr = SQLMaker.makeUpdateSql(structure, jsonValue);
@@ -202,7 +202,7 @@ DataMgr.prototype.selectData = function (tableName, priValue, forValue, noCache,
     var self = this;
     self.structureRedis.getStructure(self.databaseSign, tableName, (err, structure)=> {
         if (!!err || !structure) {
-            cb(err || 'can not find structure');
+            cb(err || `${tableName} can not find structure`);
             return;
         }
         _selectData(self, structure, priValue, forValue, noCache, cb);
@@ -224,7 +224,7 @@ DataMgr.prototype.selectDataByCondition = function (tableName, condition, noCach
     var self = this;
     self.structureRedis.getStructure(self.databaseSign, tableName, (err, structure)=> {
         if (!!err || !structure) {
-            cb(err || 'can not find structure');
+            cb(err || `${tableName} can not find structure`);
             return;
         }
         var priValue = condition[structure[PRIMARY]],
@@ -286,9 +286,9 @@ DataMgr.prototype.isExist = function (tableName, condition, cb) {
  */
 DataMgr.prototype.deleteRedisCacheByFather = function (tableName, primaryValue, foreignValue, cb) {
     var self = this;
-    self.structureRedis.getStructure(self.databaseSign, tableName, (err, structure)=> {
+    self.structureRedis.getStructures(self.databaseSign, (err, structure)=> {
         if (!!err || !structure) {
-            cb(err || 'can not find structure');
+            cb(err || `${tableName} can not find structure`);
             return;
         }
         self.gameRedis.removeCacheByFather(tableName, structure, primaryValue, foreignValue, cb);
@@ -343,8 +343,7 @@ function _selectFromRedis(self, structure, priValue, forValue, cb) {
             cb(err, data);
         } else {
             _selectFromDB(self, structure, priValue, forValue, (err, dbData)=> {
-                //console.error(dbData);
-                if (!!err || !data) {
+                if (!!err || !dbData) {
                     cb(err, dbData);
                 } else {
                     self.gameRedis.addRedisCache(structure, dbData, err=> {
