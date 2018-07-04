@@ -324,7 +324,7 @@ function _selectFromDB(self, structure, priValue, forValue, cb) {
     var sql = SQLMaker.makeSelectSql(structure.name, condition);
     self.dbMgr.query(sql, [], function (err, dataDB) {
         if (!!err || !dataDB || dataDB.length < 1) {
-            cb(err, []);
+            cb(err, !!priValue ? null : []);
             if (!!err) console.error(`sql:${sql}`);
         } else {
             var data = JSON.parse(JSON.stringify(dataDB));
@@ -343,7 +343,7 @@ function _selectFromRedis(self, structure, priValue, forValue, cb) {
             cb(err, data);
         } else {
             _selectFromDB(self, structure, priValue, forValue, (err, dbData)=> {
-                if (!!err || !dbData) {
+                if (!!err || !dbData || dbData.length < 1) {
                     cb(err, dbData);
                 } else {
                     self.gameRedis.addRedisCache(structure, dbData, err=> {
