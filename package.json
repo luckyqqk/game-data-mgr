@@ -26,7 +26,6 @@
     ]
   ],
   "_from": "game-data-mgr@^0.0.1",
-  "_id": "game-data-mgr@0.0.1",
   "_inCache": true,
   "_location": "/game-data-mgr",
   "_nodeVersion": "6.14.1",
@@ -58,9 +57,7 @@
   "_shrinkwrap": null,
   "_spec": "game-data-mgr@^0.0.1",
   "_where": "D:\\Project\\AceFishing-Server\\game-server",
-  "author": {
-    "name": "luckyqqk"
-  },
+  "author": "luckyqqk",
   "bugs": {
     "url": "https://github.com/luckyqqk/game-data-mgr/issues"
   },
@@ -75,7 +72,6 @@
     "unpackedSize": 37886,
     "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa4Yr3CRA9TVsSAnZWagAAklQP/AjsvsTxCDMr8JKtIhL3\ndftfIOdBJthS9Uv7/+YY683dj1z170RrhKfwGIJSH7Own3k5WXPct/jsnwFj\n7uAE6K8H6WYm9aa0ckuceokGV/4WHLWRly9OvxxGJz8YseQNSfC3cmvIA/WZ\n+2VxC9jL8fn5qJIxTYkjU7xGdes+rfhX0ENCvTHQi/altvb78kBdUVY8CDDy\nXADdu1R7/uAgvsccX6+mY0sDLiu+R1tmSXkyCUgakAhYGUOSk9O+LhNHkmpD\ntJwSIrOZPgvvdiZJ9sDrJKbL+hmiu9R1GzpCcNR+83dIRJ7tKezl5IHmnmC0\nyv6CPMXHJYATppRcPMW3dzfVfXm2zach25V6Yv0S/gV6I6JhwFE7PTlePd04\nRQN/2J9h6Hl45rfEml+1ydRM8/2gOM+iUR+RY+dfxYRZCVzqPUnGUilmA9Y7\nAHIinlZZ/xK4udcInw1gaCnSWJte74LlrohE19LFWxErNujyw+f2IteDVxvd\nz9rIgOacl99zscWxhlXa2pWJp/+TjDD/bORDfW6ewK9wZ7mxc+XvO8pQSD3f\nC3XKOwT/+6fgs3GuwSV/8vuayqGsWu8KJPJGbN7gqFqgT87TPjrELOab/kxT\nSCVh0iRmGX/AcSETprHbv2Xp4qcfkQtu3cOpejB7TAEkRfzKRkvmtyQuEbze\nhl90\r\n=QaRy\r\n-----END PGP SIGNATURE-----\r\n"
   },
-  "gitHead": "ebc140f064a307a89af227dfbdf81e3aca8e15d4",
   "homepage": "https://github.com/luckyqqk/game-data-mgr#readme",
   "keywords": [
     "game",
@@ -86,14 +82,10 @@
   "license": "MIT",
   "main": "index.js",
   "maintainers": [
-    {
-      "name": "luckyqqk",
-      "email": "luckyqqk@163.com"
-    }
+    "luckyqqk <luckyqqk@163.com>"
   ],
   "name": "game-data-mgr",
   "optionalDependencies": {},
-  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/luckyqqk/game-data-mgr.git"
@@ -101,5 +93,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "0.0.1"
+  "version": "0.0.2"
 }
